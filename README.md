@@ -30,6 +30,7 @@
 
 ### Researching the domain
  - You will need to research and understand your domain at a high level and know what kind of data to store in each table.
+        
         - Calendar: https://www.motogp.com/en/calendar
             - Each location has a track. We can model this data too using Ruby.
         - Riders: https://www.motogp.com/en/riders/MotoGP
