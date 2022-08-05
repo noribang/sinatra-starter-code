@@ -22,3 +22,16 @@ task :console do
   ActiveRecord::Base.logger = Logger.new(STDOUT)
   Pry.start
 end
+
+desc "Create a model: rake create_model FILE_NAME=file_name, use snake_case where required"
+task :create_model do
+  str = ENV['FILE_NAME'].split("_").map { |s| s[0].upcase + s.slice(1, s.length) }.join("")
+  file = "./app/models/#{ENV['FILE_NAME']}.rb"
+
+  if File.exists?(file)
+    puts "File already exists!!"
+  else
+    File.open("./app/models/#{ENV['FILE_NAME']}.rb", "w+") { |f| f.write("class #{str} < ActiveRecord::Base\nend") }
+    puts "#{ENV['FILE_NAME']}.rb successfully created!"
+  end
+end
