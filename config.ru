@@ -12,6 +12,7 @@ end
 use Rack::JSONBodyParser
 run ApplicationController
 use RidersController
+use SeasonsController
 # use WhateverController
 
 # You will have to specify additional controllers that Sinatra should use (ex: `use UsersController`)
